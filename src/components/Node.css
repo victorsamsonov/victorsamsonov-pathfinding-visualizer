@@ -1,0 +1,111 @@
+.node {
+  border: 1.5px solid lightblue;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  max-width: 50px;
+  max-height: 50px;
+  height: flex;
+}
+
+.node-start {
+  background-color: lightgreen;
+}
+
+.node-end {
+  background-color: rgb(226, 57, 57);
+}
+
+.node-visited {
+  animation-name: visitedAnimation;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+@keyframes visitedAnimation {
+  0% {
+    transform: scale(0.3);
+    background-color: rgba(0, 0, 66, 0.75);
+    border-radius: 10%;
+  }
+
+  50% {
+    background-color: rgb(86, 233, 208);
+  }
+
+  75% {
+    transform: scale(1.1);
+    background-color: rgb(185, 206, 255);
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: rgb(228, 234, 255);
+  }
+}
+
+@keyframes wall-animation {
+  0% {
+    transform: scale(0.5);
+    background-color: rgb(12, 53, 71);
+    border-width: 0;
+  }
+
+  50% {
+    transform: scale(1.2);
+    background-color: rgb(12, 53, 71);
+    border-width: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: rgb(12, 53, 71);
+    border-width: 0;
+  }
+}
+
+.node-wall {
+  background-color: rgb(12, 53, 71);
+  animation-duration: 0.4s;
+  animation-name: wall-animation;
+  animation-iteration-count: 1;
+}
+
+.node-shortest-path {
+  animation-name: path;
+  animation-duration: 1.25s;
+  animation-timing-function: ease-in;
+  animation-delay: 15;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: unset;
+}
+
+@keyframes path {
+  0% {
+    transform: scale(0.4);
+    background-color: rgb(86, 233, 208);
+  }
+
+  50% {
+    transform: scale(1.2);
+    background-color: rgb(147, 149, 246);
+
+    transform: rotate(180deg);
+  }
+
+  60% {
+    transform: scale(1);
+    background-color: rgb(183, 114, 248);
+  }
+  100% {
+    transform: scale(1);
+    background-color: rgb(86, 233, 208);
+  }
+}
