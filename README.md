@@ -1,1 +1,1 @@
-# Pathfind-Visualizer
+# Pathfinder-Visualizer
